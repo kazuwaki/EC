@@ -1,0 +1,21 @@
+<%= image_tag @item.get_image(500,500) %>
+<table class="table">
+  <tbody>
+    <tr>
+      <td><%= @item.name %></td>
+    </tr>
+    <tr>
+      <td><%= @item.introduction %></td>
+    </tr>
+    <tr>
+      <td><%= @item.price %></td>
+    </tr>
+    <tr>
+      <%= form_with model: @cart_item, url: cart_items_path do |f| %>
+      <%= f.hidden_field :item_id, value: @item.id %>
+      <td><%= f.select :amount, *[1..10] %></td>
+      <td><%= f.submit "カートに入れる" %></td>
+      <% end %>
+    </tr>
+  </tbody>
+</table>
