@@ -8,6 +8,13 @@ Rails.application.routes.draw do
         delete :destroy_all
       end
     end
+    resources :orders, only: [:index, :show, :new ,:create] do
+      collection do
+        get :completion
+        post :confirm
+      end
+    end
+    resources :addresses,  only: [:index, :edit, :update, :create, :destroy]
   end
 
   namespace :admin do

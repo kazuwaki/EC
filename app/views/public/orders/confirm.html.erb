@@ -1,0 +1,37 @@
+<h1>注文情報確認</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>商品名</th>
+      <th>価格(税込)</th>
+      <th>数量</th>
+      <th>小計</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cart_items.each do |cart_item| %>
+      <tr>
+        <td><%= image_tag cart_item.item.get_image(100,100) %><%= cart_item.item.name %></td>
+        <td><%= cart_item.item.text_price %></td>
+        <td><%= cart_item.amount %></td>
+        <td><%= cart_item.subtotal_price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<table class="table">
+  <tbody>
+    <tr>
+      <th>送料</th>
+      <td><%= 800 %></td>
+    </tr>
+    <tr>
+      <th>商品合計</th>
+      <td><%= @total %></td>
+    </tr>
+    <tr>
+      <th>請求金額</th>
+      <td><%= @totals %></td>
+    </tr>
+  </tbody>
+</table>
