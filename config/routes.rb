@@ -14,7 +14,8 @@ Rails.application.routes.draw do
         post :confirm
       end
     end
-    resources :addresses,  only: [:index, :edit, :update, :create, :destroy]
+    resources :addresses, only: [:index, :edit, :update, :create, :destroy]
+    resources :customers, only: [:show, :edit, :update, :confirmation]
   end
 
   namespace :admin do
