@@ -10,12 +10,14 @@ Rails.application.routes.draw do
     end
     resources :orders, only: [:index, :show, :new ,:create] do
       collection do
-        get :completion
         post :confirm
+        get :completion
       end
     end
     resources :addresses, only: [:index, :edit, :update, :create, :destroy]
-    resources :customers, only: [:show, :edit, :update, :confirmation]
+    resources :customers, only: [:show, :edit, :update] do
+      get "confirmation" => "customers#confirmation"
+    end
   end
 
   namespace :admin do

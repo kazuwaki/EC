@@ -1,7 +1,5 @@
 class Public::OrdersController < ApplicationController
 
-  def show
-  end
 
   def new
     @order = Order.new
@@ -14,13 +12,14 @@ class Public::OrdersController < ApplicationController
       cart_items.each do |cart_item|
         order_detail = OrderDetail.new
         order_detail.order_id = order.id
+        order_detail.item_id = cart_item.item_id
         order_detail.amount = cart_item.amount
         order_detail.price = cart_item.item.price
-        order_detail.item_id = cart_item.item_id
+
         order_detail.save
       end
       cart_items.destroy_all
-      redirect_to confirm_orders_path
+      redirect_to completion_orders_path
     end
   end
 
@@ -40,16 +39,24 @@ class Public::OrdersController < ApplicationController
       @order.address = current_customer.address
       @order.name = current_customer.last_name + current_customer.first_name
     elsif @address_select == "1"
-      @order.postal_code = current_customer.postal_code
-      @order.address = current_customer.address
-      @order.name = current_customer.last_name + current_customer.first_name
+      @address = Address.find(params[:order][:address_id])
+      @order.postal_code = @address.postal_code
+      @order.address = @address.address
+      @order.name = @address.name
     else
-      @order = params[:address, :postal_code, :name]
+
     end
   end
 
   def index
     @orders = Order.all
+  end
+
+  def show
+    @order = Order.find(params[:id])
+    @order_details = @order.order_details
+    @shipping_cost = 800
+    @total = @order.total_payment - @shipping_cost
   end
 
   private

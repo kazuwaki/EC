@@ -6,20 +6,16 @@ class Public::CartItemsController < ApplicationController
 
   def create
     @cart_item = current_customer.cart_items.new(cart_items_params)
-    @cart_items = CartItem.all
-    @cart_items.each do |cart_item|
-      if cart_item.item_id == @cart_item.item_id
-        new_cart_item = (cart_item.amount + @cart_item.amount)
-        cart_item.update_attribute(:amount, new_cart_item )
-        @cart_item.destroy
-      end
+    @old_cart_item = CartItem.find_by(item: @cart_item.item)
+    if @old_cart_item.present? && @cart_item.valid?
+      @cart_item.amount += @old_cart_item.amount
+      @old_cart_item.destroy
     end
     @cart_item.save
     redirect_to cart_items_path
   end
 
   def destroy
-    @cart_item = CartItem.find(params[:id])
     @cart_item.destroy
     redirect_to request.referer
   end
@@ -31,7 +27,7 @@ class Public::CartItemsController < ApplicationController
   end
 
   def destroy_all
-    @cart_items = CartItem.all
+    @cart_items = current_customer.cart_items
     @cart_items.destroy_all
     redirect_to request.referer
   end
