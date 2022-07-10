@@ -1,0 +1,19 @@
+<h1><%= @customer.last_name %><%= @customer.first_name %>さんの注文履歴</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>注文日</th>
+      <th>個数</th>
+      <th>ステータス</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+    <tr>
+      <td><%= order.created_at.strftime('%Y/%m/%d %H:%M:%S') %></td>
+      <td><%= order.order_details.inject(0) {|sum, hash| sum + hash[:amount]} %></td>
+      <td><%= order.status_i18n %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

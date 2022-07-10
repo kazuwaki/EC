@@ -5,7 +5,7 @@ class Public::RegistrationsController < Devise::RegistrationsController
   protected
 
   def after_sign_up_path_for(resource)
-    root_path
+    items_path
   end
 
   def configure_permitted_parameters

@@ -53,9 +53,9 @@
       <% @order_details.each do |order_detail| %>
         <tr>
             <td><%= order_detail.item.name %></td>
-            <td><%= (order_detail.price)*1.1 %></td>
+            <td><%= (order_detail.price)*1.1.floor %></td>
             <td><%= order_detail.amount %></td>
-            <td><%= (order_detail.price)*1.1*(order_detail.amount) %></td>
+            <td><%= (order_detail.price).floor*1.1.floor*(order_detail.amount).floor %></td>
         </tr>
       <% end %>
     </tbody>
