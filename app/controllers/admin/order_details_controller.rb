@@ -3,7 +3,7 @@ class Admin::OrderDetailsController < ApplicationController
     @order_detail = OrderDetail.find(params[:id])
     @order_details = OrderDetail.where(order_id: @order_detail.order.id)
     @order_detail.update(order_detail_params)
-    if @order_detail.making_status = "in_production"
+    if @order_detail.making_status == "in_production"
       @order_detail.order.update(status: "in_making")
     end
     if @order_details.all? { |order_detail| order_detail.making_status == "production_completed"}
