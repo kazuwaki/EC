@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :addresses, only: [:index, :edit, :update, :create, :destroy]
     resource :customers, only: [:show, :edit, :update] do
       get "confirmation" => "customers#confirmation"
+      patch "withdrawal" => "customers#withdrawal"
     end
   end
 

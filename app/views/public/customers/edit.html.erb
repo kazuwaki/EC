@@ -1,5 +1,5 @@
 <h1>会員情報編集</h1>
-<%= form_with model: @customer,url: customer_path, method: :patch, local: false do |f| %>
+<%= form_with model: @customer,url: customers_path, method: :patch, local: false do |f| %>
 <table class="table">
   <tbody>
     <tr>
@@ -30,5 +30,6 @@
 </table>
 <div>
   <%= f.submit "編集内容を保存" %>
+  <%= link_to "退会する", confirmation_customers_path %>
 </div>
 <% end %>
