@@ -1,26 +1,33 @@
-<h3>ジャンル検索</h3>
-<table class="table">
-  <thead>
-    <tr>
-      <th>ジャンル一覧</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @genres.each do |genre| %>
-      <tr>
-        <th><%= genre.name %></th>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<h1>商品一覧</h1>
-<div class="field">
-  <% @items.each do |item| %>
-    <p><%= link_to item_path(item) do %>
-      <%= image_tag item.get_image(200,200) %><% end %>
-    </p>
-    <p><%= item.name %></p>
-    <p><%= item.price %>円</p>
-  <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-2">
+      <h3>ジャンル検索</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ジャンル一覧</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @genres.each do |genre| %>
+            <tr>
+              <th><%= genre.name %></th>
+            </tr>
+          <% end %>
+          </tbody>
+      </table>
+    </div>
+    <div class="col-10">
+      <h1>商品一覧</h1>
+      <div class="d-flex flex-wrap justify-content-around">
+        <% @items.each do |item| %>
+          <p><%= link_to item_path(item) do %>
+            <%= image_tag item.get_image(200,200) %><% end %>
+          </p>
+          <p><%= item.name %></p>
+          <p><%= item.price %>円</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
