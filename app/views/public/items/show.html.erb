@@ -1,20 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-3">
+      <%= image_tag @item.get_image(500,500) %>
+    </div>
+    <div class="col-6">
+      <h3><%= @item.name %></h3>
+      <p><%= @item.introduction %></p>
+      <p>¥<%= @item.price %>円</p>
 
-<%= image_tag @item.get_image(500,500) %>
-<table class="table">
-  <tbody>
-    <tr>
-      <td><%= @item.name %></td>
-    </tr>
-    <tr>
-      <td><%= @item.introduction %></td>
-    </tr>
-    <tr>
-      <td><%= @item.price %></td>
-    </tr>
-  </tbody>
-</table>
+    <div class="d-flex flex-row-reverse bd-highlight">
       <%= form_with model: @cart_item, url: cart_items_path do |f| %>
-      <%= f.hidden_field :item_id, value: @item.id %>
-      <%= f.select :amount, *[1..10] %>
-      <%= f.submit "カートに入れる" %>
+        <%= f.hidden_field :item_id, value: @item.id %>
+        <p class="p-2 bd-highlight"><%= f.select :amount, *[1..10] %>
+        <%= f.submit "カートに入れる" %></p>
       <% end %>
+      </div>
+    </div>
+  </div>
+</div>
