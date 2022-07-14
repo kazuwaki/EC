@@ -21,11 +21,13 @@
       <h1>商品一覧</h1>
       <div class="d-flex flex-wrap justify-content-around">
         <% @items.each do |item| %>
-          <p><%= link_to item_path(item) do %>
-            <%= image_tag item.get_image(200,200) %><% end %>
-          </p>
-          <p><%= item.name %></p>
-          <p><%= item.price %>円</p>
+          <%= link_to item_path(item), class:"card mb-3 shadow" do %>
+            <%= image_tag item.get_image(200,200), class:"card-img-top" %>
+          <div class="card-body">
+          <p class="card-title"><%= item.name %></p>
+          <p class="card-text"><%= item.price %>円</p>
+          </div>
+          <% end %>
         <% end %>
       </div>
     </div>
