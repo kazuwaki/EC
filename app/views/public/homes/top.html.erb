@@ -1,2 +1,5 @@
-<h1>Public::Homes#top</h1>
-<p>Find me in app/views/public/homes/top.html.erb</p>
+<h1>一覧写真</h1>
+<% @items.each do |item| %>
+	<%= image_tag item.get_image(400,400) %>
+	<%= item.name %>
+<% end %>
