@@ -29,7 +29,7 @@
       <%= form_with model: @cart_item, url: cart_items_path do |f| %>
         <%= f.hidden_field :item_id, value: @item.id %>
         <p class="p-2 bd-highlight"><%= f.select :amount, *[1..10] %>
-        <%= f.submit "カートに入れる" %></p>
+        <%= f.submit "カートに入れる", class: "btn btn-success" %></p>
       <% end %>
       </div>
     </div>
