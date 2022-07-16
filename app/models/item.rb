@@ -16,4 +16,11 @@ class Item < ApplicationRecord
   def text_price
     (price*1.1).floor
   end
+
+
+  def self.genre_search(search_genre)
+    Item.where(genre_id: search_genre)
+  end
+
+
 end

@@ -11,7 +11,7 @@
         <tbody>
           <% @genres.each do |genre| %>
             <tr>
-              <th><%= genre.name %></th>
+              <th><%= link_to genre.name, genre_search_items_path(genre_id: genre.id), class:"btn btn-info btn-sm rounded-pill mb-2" %></th>
             </tr>
           <% end %>
           </tbody>

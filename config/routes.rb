@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   scope module: :public do
     root to: 'homes#top'
     get '/about' => "homes#about"
-    resources :items, only: [:index, :show]
+    resources :items, only: [:index, :show] do
+      collection do
+        get "genre_search" => "items#genre_search"
+      end
+    end
     resources :cart_items, only: [:index, :update, :destroy, :create] do
       collection do
         delete :destroy_all
