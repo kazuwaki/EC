@@ -1,5 +1,12 @@
-<h1>一覧写真</h1>
-<% @items.each do |item| %>
-	<%= image_tag item.get_image(400,400) %>
-	<%= item.name %>
-<% end %>
+<div class="container">
+	<div class="row">
+		<div class="offset-4 col-4">
+			<h1>一覧写真</h1>
+			<div class="slider">
+				<% @items.each do |item| %>
+					<%= image_tag item.get_image(100,100), class: "show-img" %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
