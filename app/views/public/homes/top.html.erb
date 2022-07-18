@@ -1,12 +1,14 @@
 <div class="container">
-	<div class="row">
-		<div class="offset-4 col-4">
-			<h1>一覧写真</h1>
-			<div class="slider">
-				<% @items.each do |item| %>
-					<%= image_tag item.get_image(100,100), class: "show-img" %>
-				<% end %>
-			</div>
-		</div>
-	</div>
+  <divn class="row">
+    <div class="col-10">
+      <h1>チーズケーキの作り方</h1>
+    </div>
+    <div class="col-12">
+      <div class="slider-top">
+        <% @items.each do |item| %>
+          <%= image_tag item.get_image(300,300) %>
+        <% end %>
+      </div>
+    </div>
+  </divn>
 </div>

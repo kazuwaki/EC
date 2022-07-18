@@ -8,3 +8,15 @@ $(document).on('turbolinks:load', function(){
   });
 
 });
+
+$(document).on('turbolinks:load', function(){
+  $('.slider-top').slick({
+    centerMode: true,
+    centerPadding: '25%',
+    arrows: false,
+    autoplay: true, //自動再生
+    autoplaySpeed: 4000, //再生スピード
+  });
+
+});
+
