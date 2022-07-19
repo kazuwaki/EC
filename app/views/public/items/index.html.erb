@@ -1,35 +1,27 @@
-<div class="container">
-  <div class="row">
-    <div class="col-2">
-      <h3>ジャンル検索</h3>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>ジャンル一覧</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @genres.each do |genre| %>
-            <tr>
-              <th><%= link_to genre.name, genre_search_items_path(genre_id: genre.id), class:"btn btn-info btn-sm rounded-pill mb-2" %></th>
-            </tr>
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <div class="mt-4">
+          <%= render 'public/items/genre', genres: @genres %>
+        </div>
+      </div>
+      <div class="col-9 mt-4" style = "width: 100%">
+        <h2 class="bg-light text-center">新着商品</h2>
+        <div class="d-flex flex-wrap justify-content-around">
+          <% @items.each do |item| %>
+            <div clas="item-group" style = "width: 25%" >
+              <% if customer_signed_in? %>
+                <%= link_to item_path(item.id) do %>
+                  <%= image_tag item.get_image(200,200) %>
+                <% end %>
+              <% else %>
+                <%= image_tag item.get_image(200,200) %>
+              <% end %>
+              <%= item.name %><br>
+              ¥<%= (item.price).to_s(:delimited) %>
+            </div>
           <% end %>
-          </tbody>
-      </table>
-    </div>
-    <div class="col-10">
-      <h1>商品一覧</h1>
-      <div class="d-flex flex-wrap justify-content-around">
-        <% @items.each do |item| %>
-          <%= link_to item_path(item), class:"card mb-3 shadow" do %>
-            <%= image_tag item.get_image(200,200), class:"card-img-top" %>
-          <div class="card-body">
-          <p class="card-title"><%= item.name %></p>
-          <p class="card-text"><%= item.price %>円</p>
-          </div>
-          <% end %>
-        <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>

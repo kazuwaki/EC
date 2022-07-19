@@ -1,19 +1,24 @@
 <div class="container">
-  <divn class="row">
-    <div class="col-10">
-      <h1>チーズケーキの作り方</h1>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <div class="slider">
-        <% @items.each do |item| %>
-          <%= image_tag item.get_image(300,300) %>
-        <% end %>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="items" class="btn btn-primary">Go somewhere</a>
+  <div class="row">
+    <div class="col-8 offset-2">
+      <div class="mt-3 text-center">
+        <h1>About</h1>
+        <p class="mt-4">ようこそ、ながのCAKEへ！</br>
+        このサイトは、ケーキ販売のECサイトになります。</br>
+        会員でない方も商品の閲覧はできますが、</br>
+        購入には会員登録が必要になります。</p>
       </div>
     </div>
-  </divn>
+  </div>
+  <div class="row">
+    <div class="col-8 offset-2">
+      <div class="mt-4 text-center">
+        <div class="slider">
+          <% @items.each do |item| %>
+            <%= image_tag item.get_image(500,500) %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

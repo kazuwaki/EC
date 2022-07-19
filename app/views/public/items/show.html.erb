@@ -1,21 +1,7 @@
 <div class="container">
   <div class="row">
-    <div class="col-3">
-    <h3>ジャンル検索</h3>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>ジャンル一覧</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @genres.each do |genre| %>
-            <tr>
-              <th><%= link_to genre.name, genre_search_items_path(genre_id: genre.id), class:"btn btn-info btn-sm rounded-pill mb-2" %></th>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+    <div class="col-3 mt-3">
+      <%= render 'public/items/genre', genres: @genres %>
     </div>
     <div class="col-3">
       <%= image_tag @item.get_image(500,500) %>
