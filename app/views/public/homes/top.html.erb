@@ -1,10 +1,6 @@
 <div class="main">
   <div class="main-top">
-    <ul class="slider">
-      <%= image_tag "cake2.jpg", class: "main-top-image" %>
-      <%= image_tag "cake3.jpg", class: "main-top-image" %>
-      <%= image_tag "cake4.jpeg", class: "main-top-image" %>
-    </ul>
+    <%= image_tag "cake2.jpeg", class: "main-top-image" %>
     <p class="main-top-text">ようこそ、ながのCAKEへ！</br>
     このサイトは、ケーキ販売のECサイトになります。</br>
     会員でない方も商品の閲覧はできますが、</br>
@@ -14,29 +10,19 @@
   <div class="container">
     <div class="row">
       <div class="col-2">
-        <div class="mt-1">
+        <div class="mt-4">
           <%= render 'public/items/genre',genres: @genres %>
         </div>
       </div>
-      <div class="col-10 offset-1">
+      <div class="col-10 mt-4">
         <h2 class="bg-light text-center">新着商品</h2>
         <div class="d-flex flex-wrap justify-content-around">
           <% @items.each do |item| %>
-            <% if customer_signed_in? %>
-              <%= link_to item_path(item.id), class:"card mb-3 shadow", style:"padding: 0; height:300px; width: 200px" do %>
-                <%= image_tag item.get_image(200,200), class:"card-img-top",  style:"height:150px; width:auto; object-fit: cover" %>
-                <div class="card-body", style="color:black; background-color:#ffe2d5">
-                  <h5 class="card-title"><%= item.name %></h5>
-                  <p class="card-text">¥<%= item.price.to_s(:delimited) %></p>
-                </div>
-              <% end %>
-            <% else %>
-              <div class:"card mb-3 shadow", style:"padding: 0; height:300px; width: 200px">
-                <%= image_tag item.get_image(200,200), class:"card-img-top",  style:"height:150px; width:auto; object-fit: cover" %>
-                <div class="card-body", style="color:black; background-color:#ffe2d5">
-                  <h5 class="card-title"><%= item.name %></h5>
-                  <p class="card-text">¥<%= item.price.to_s(:delimited) %></p>
-                </div>
+            <%= link_to item_path(item.id), class:"card mb-3 shadow", style:"padding: 0; height:300px; width: 200px" do %>
+              <%= image_tag item.get_image(200,200), class:"card-img-top",  style:"height:150px; width:auto; object-fit: cover" %>
+              <div class="card-body", style="color:black; background-color:#ffe2d5">
+                <h5 class="card-title"><%= item.name %></h5>
+                <p class="card-text">¥<%= item.price.to_s(:delimited) %></p>
               </div>
             <% end %>
           <% end %>
@@ -45,22 +31,3 @@
       </div>
     </div>
   </div>
-  <div class="container">
-  <divn class="row">
-    <div class="col-10">
-      <h1>チーズケーキの作り方</h1>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <div class="slider">
-        <% @items.each do |item| %>
-          <%= image_tag item.get_image(300,300) %>
-        <% end %>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="items" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </divn>
-</div>
