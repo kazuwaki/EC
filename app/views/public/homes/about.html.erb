@@ -1,24 +1,96 @@
-<div class="container">
-  <div class="row">
-    <div class="col-8 offset-2">
-      <div class="mt-3 text-center">
-        <h1>About</h1>
-        <p class="mt-4">ようこそ、ながのCAKEへ！</br>
-        このサイトは、ケーキ販売のECサイトになります。</br>
-        会員でない方も商品の閲覧はできますが、</br>
-        購入には会員登録が必要になります。</p>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-8 offset-2">
-      <div class="mt-4 text-center">
-        <div class="slider">
-          <% @items.each do |item| %>
-            <%= image_tag item.get_image(500,500) %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="choose_box">
+
+<div id="q_01" class="fit">
+ <p>質問1</p>
+  <ul class="flexbox fw">
+   <li class="even"><span class="btn" href="#q_02">選択肢1</span></li>
+   <li class="odd"><span class="btn" href="#q_03">選択肢2</span></li>
+   <li class="odd"><span class="btn" href="#q_04">選択肢3</span></li>
+   <li class="odd"><span class="btn" href="#q_05">選択肢4</span></li>
+  </ul>
+ </div>
+ <!-- 最初の選択肢 -->
+
+<div id="q_02" style="display: none;">
+<p>質問2？</p>
+ <ul class="flexbox fw">
+  <li class="even"><span class="btn" href="#q_06">選択肢1-1</span></li>
+  <li class="odd"><span class="btn" href="#q_07">選択肢1-2</span></li>
+ </ul>
+</div>
+<!-- 次の選択肢 -->
+
+<div id="q_03" style="display: none;">
+<p>質問2？</p>
+ <ul class="flexbox fw">
+  <li class="even"><span class="btn" href="#q_08">選択肢2-1</span></li>
+  <li class="odd"><span class="btn" href="#q_09">選択肢2-2</span></li>
+ </ul>
+</div>
+<!-- 次の選択肢 -->
+
+<div id="q_04" style="display: none;">
+<p>質問2？</p>
+ <ul class="flexbox fw">
+  <li class="even"><span class="btn" href="#q_10">選択肢3-1</span></li>
+  <li class="odd"><span class="btn" href="#q_11">選択肢3-2</span></li>
+ </ul>
+</div>
+<!-- 次の選択肢 -->
+
+ <div id="q_05" style="display: none;">
+ <p>質問2？</p>
+  <ul class="flexbox fw">
+   <li class="even"><span class="btn" href="#q_12">選択肢4-1</span></li>
+   <li class="odd"><span class="btn" href="#q_13">選択肢4-2</span></li>
+  </ul>
+ </div>
+<!-- 次の選択肢 -->
+
+
+ <div id="q_06" style="display: none;">
+  <p>あなたにおすすめなのは…</p>
+        <h4>『リンゴ』です！！</h4>
+   <span><span class="btn" href="#q_01">もどる</span></span>
+</div>
+
+<!-- 選択肢の答え① -->
+
+ <div id="q_07" style="display: none;">
+        <p>あなたにおすすめなのは…</p>
+        <h4>『葡萄』です！！</h4>
+     <span><span class="btn" href="#q_01">もどる</span></span>
+</div>
+
+<div id="q_08" style="display: none;">
+        <p>あなたにおすすめなのは…</p>
+        <h4>『オレンジ』です！！</h4>
+     <span><span class="btn" href="#q_01">もどる</span></span>
+</div>
+<div id="q_09" style="display: none;">
+        <p>あなたにおすすめなのは…</p>
+        <h4>『バナな』です！！</h4>
+     <span><span class="btn" href="#q_01">もどる</span></span>
+</div>
+<div id="q_10" style="display: none;">
+        <p>あなたにおすすめなのは…</p>
+        <h4>『もも』です！！</h4>
+     <span><span class="btn" href="#q_01">もどる</span></span>
+</div>
+<div id="q_11" style="display: none;">
+        <p>あなたにおすすめなのは…</p>
+        <h4>『お酒』です！！</h4>
+     <span><span class="btn" href="#q_01">もどる</span></span>
+</div>
+<div id="q_12" style="display: none;">
+        <p>あなたにおすすめなのは…</p>
+        <h4>『いちじく』です！！</h4>
+     <span><span class="btn" href="#q_01">もどる</span></span>
+</div>
+<div id="q_13" style="display: none;">
+        <p>あなたにおすすめなのは…</p>
+        <h4>『banana』です！！</h4>
+     <span><span class="btn" href="#q_01">もどる</span></span>
+</div>
+<!-- 選択肢の答え② -->
 </div>

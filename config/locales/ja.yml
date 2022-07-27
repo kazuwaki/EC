@@ -16,3 +16,5 @@
           waiting_for_production: "作成待ち"
           in_production: "製作中"
           production_completed: "制作完了"
+    activerecord:
+      models: 
