@@ -1,0 +1,3 @@
+$('.address').html( '<%= j(render 'address', addresses: @addresses) %>' )
+$('.address-form').val("")
+$('#address_error').html(' <%= j(render "layouts/error", object: @address_new) %>' )

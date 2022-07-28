@@ -1,0 +1,19 @@
+<%= form_with model: address, url: addresses_path, method: :post, local: false do |f| %>
+<table class="table">
+  <tbody>
+    <tr>
+      <td>郵便番号(ハイフン無し)</td>
+      <td><%= f.text_field :postal_code, class: "address-form" %></td>
+    </tr>
+    <tr>
+      <td>住所</td>
+      <td><%= f.text_field :address, class: "address-form" %></td>
+    </tr>
+    <tr>
+      <td>宛名</td>
+      <td><%= f.text_field :name, class: "address-form" %></td>
+    </tr>
+  </tbody>
+</table>
+  <%= f.submit "新規登録" %>
+<% end %>
