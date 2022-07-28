@@ -7,7 +7,10 @@ class Admin::GenresController < ApplicationController
   def create
     @genres = Genre.all
     @genre = Genre.new(genre_params)
-    @genre.save
+    unless @genre.save
+      render 'error'
+    end
+    @genre_new = Genre.new
   end
 
   def edit

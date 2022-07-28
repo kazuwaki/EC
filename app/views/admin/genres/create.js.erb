@@ -1,2 +1,3 @@
 $('.genres_index').html('<%= j(render 'genre', genres: @genres) %>');
 $('.genre_form').val("")
+$('.genre_error').html('<%= j(render 'layouts/error', object: @genre_new) %> ')
