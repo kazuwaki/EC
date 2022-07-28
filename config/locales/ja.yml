@@ -20,6 +20,7 @@
       models:
         customer: "会員"
         address: "配送先"
+        genre: "ジャンル"
       attributes:
         customer:
           password: "パスワード"
@@ -36,3 +37,5 @@
           postal_code: "郵便番号"
           address: "住所"
           name: "宛名"
+        genre:
+          name: "ジャンル名"
