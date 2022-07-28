@@ -5,13 +5,9 @@ class Admin::GenresController < ApplicationController
   end
 
   def create
+    @genres = Genre.all
     @genre = Genre.new(genre_params)
-    if @genre.save
-      redirect_to request.referer
-    else
-      @genres = Genre.all
-      render :index
-    end
+    @genre.save
   end
 
   def edit

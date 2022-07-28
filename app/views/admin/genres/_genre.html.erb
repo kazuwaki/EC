@@ -1,0 +1,16 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>ジャンル</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% genres.each do |genre| %>
+      <tr>
+        <td><%= genre.name %></td>
+        <td><%= link_to "編集", edit_admin_genre_path(genre) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
