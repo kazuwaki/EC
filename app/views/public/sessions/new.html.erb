@@ -1,6 +1,7 @@
 <h2>Log in</h2>
 
 <%= form_with model: @customer, url: customer_session_path do |f| %>
+<%= render "layouts/error", object: @customer %>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>

@@ -17,4 +17,17 @@
           in_production: "製作中"
           production_completed: "制作完了"
     activerecord:
-      models: 
+      models:
+        customer: "会員"
+      attributes:
+        customer:
+          password: "パスワード"
+          email: "メールアドレス"
+          encrypted_password: "パスワード"
+          last_name: "姓"
+          first_name: "名"
+          last_name_kana: "フリガナ（姓）"
+          first_name_kana: "フリガナ（名）"
+          address: "住所"
+          postal_code: "郵便番号"
+          telephone_number: "電話番号"
