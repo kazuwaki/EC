@@ -21,6 +21,7 @@
         customer: "会員"
         address: "配送先"
         genre: "ジャンル"
+        item: "商品"
       attributes:
         customer:
           password: "パスワード"
@@ -39,3 +40,8 @@
           name: "宛名"
         genre:
           name: "ジャンル名"
+        item:
+          name: "商品名"
+          introduction: "商品説明"
+          price: "価格"
+          genre: "ジャンル名"
